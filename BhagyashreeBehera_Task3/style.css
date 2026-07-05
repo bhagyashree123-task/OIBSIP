@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; padding: 20px;
+}
+
+.container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 100%; max-width: 450px; }
+h1 { text-align: center; color: #667eea; margin-bottom: 30px; }
+
+.converter-box label { display: block; margin: 15px 0 5px; font-weight: bold; color: #333; }
+.converter-box input, .converter-box select {
+    width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px;
+}
+button {
+    width: 100%; padding: 14px; background: #667eea; color: white; border: none;
+    border-radius: 8px; font-size: 18px; font-weight: bold; margin-top: 20px; cursor: pointer;
+}
+button:hover { background: #764ba2; }
+
+.result-box { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 25px; text-align: center; }
+.result-box h2 { color: #667eea; }
