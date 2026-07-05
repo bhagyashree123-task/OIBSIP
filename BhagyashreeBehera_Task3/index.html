@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter - Bhagyashree</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="converter-box">
+            <label>Enter Temperature:</label>
+            <input type="number" id="tempInput" placeholder="Enter value">
+            
+            <label>From:</label>
+            <select id="fromUnit">
+                <option value="celsius">Celsius °C</option>
+                <option value="fahrenheit">Fahrenheit °F</option>
+                <option value="kelvin">Kelvin K</option>
+            </select>
+
+            <label>To:</label>
+            <select id="toUnit">
+                <option value="fahrenheit">Fahrenheit °F</option>
+                <option value="celsius">Celsius °C</option>
+                <option value="kelvin">Kelvin K</option>
+            </select>
+
+            <button onclick="convertTemp()">Convert</button>
+            
+            <div class="result-box">
+                <h2>Result: <span id="result">--</span></h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function convertTemp() {
+            let temp = parseFloat(document.getElementById('tempInput').value);
+            let from = document.getElementById('fromUnit').value;
+            let to = document.getElementById('toUnit').value;
+            let result;
+
+            if(isNaN(temp)) {
+                alert("Please enter a valid number!");
+                return;
+            }
+
+            // First convert to Celsius
+            if(from === "celsius") result = temp;
+            else if(from === "fahrenheit") result = (temp - 32) * 5/9;
+            else if(from === "kelvin") result = temp - 273.15;
+
+            // Then convert from Celsius to target
+            if(to === "celsius") result = result;
+            else if(to === "fahrenheit") result = (result * 9/5) + 32;
+            else if(to === "kelvin") result = result + 273.15;
+
+            document.getElementById('result').innerText = result.toFixed(2) + " + to.toUpperCase();
+        }
+    </script>
+</body>
+</html>
